@@ -1,6 +1,4 @@
-ionic-angular-cordova-seed
-==========================
+drinkalytics
+============
 
-The perfect starting point for an Ionic project.
-
-- [Ionic Tutorials](http://ionicframework.com/tutorials/)
+Olin's senior class's 2014 drink tracker
