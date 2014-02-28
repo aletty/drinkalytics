@@ -12,4 +12,11 @@ angular.module('drinkalytics.controllers', [])
 .controller('PetDetailCtrl', function($scope, $stateParams, PetService) {
   // "Pets" is a service returning mock data (services.js)
   $scope.pet = PetService.get($stateParams.petId);
-});
+})
+
+.controller('StatsCtrl', ['$scope', '$stateParams', 'DrinkService', function($scope, $stateParams, DrinkService) {
+  DrinkService.pull(function (data) {
+    $scope.everyone = data;
+    console.log($scope.everyone);
+  });
+}]);
