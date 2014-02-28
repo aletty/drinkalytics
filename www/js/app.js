@@ -57,7 +57,8 @@ angular.module('drinkalytics', ['ionic', 'drinkalytics.services', 'drinkalytics.
       url: '/about',
       views: {
         'about-tab': {
-          templateUrl: 'templates/about.html'
+          templateUrl: 'templates/globalStats.html',
+          controller: 'StatsCtrl'
         }
       }
     });

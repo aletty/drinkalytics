@@ -23,4 +23,21 @@ angular.module('drinkalytics.services', [])
       return pets[petId];
     }
   }
-});
+})
+
+.factory('DrinkService', ['$http', function($http) {
+  var that = this;
+  that.all = [];
+
+  return {
+    all: function() {
+      return that.all;
+    },
+    pull: function(callback) {
+      $http.get("data/data.json").success(function (data) {
+        that.all = data;
+        callback && callback(data);
+      })
+    }
+  }
+}]);
