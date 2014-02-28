@@ -1,0 +1,19 @@
+# Trigger.IO ignores
+app/development
+app/release
+# app/local_config.json
+app/.template
+app/forge-error.log
+logs/*
+!.gitkeep
+node_modules/
+tmp
+.DS_Store
+.idea	
+platforms/android/bin/
+platforms/android/assets/
+platforms/android/CordovaLib/bin/
+platforms/*
+.lib/
+plugins/ios.json
+plugins/android.json
