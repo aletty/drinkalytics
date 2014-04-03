@@ -26,18 +26,25 @@ angular.module('drinkalytics.services', [])
 })
 
 .factory('DrinkService', ['$http', function($http) {
-  var that = this;
-  that.all = [];
+  var all = [];
+
+  function __pull(callback) {
+    $http.get("data/data.json").success(function (data) {
+      all = data.sort(function (d1, d2) { return d2['count'] - d1['count']; });
+      for (var i; i < all.length; i++) {
+        all[i]['rank'] = i+1
+      }
+      callback && callback(all)
+    })
+  }
 
   return {
-    all: function() {
-      return that.all;
-    },
-    pull: function(callback) {
-      $http.get("data/data.json").success(function (data) {
-        that.all = data;
-        callback && callback(data);
-      })
+    get: function(callback) {
+      if (!all.length) {
+        callback && __pull(callback)
+      } else {
+        callback && callback(all)
+      }
     }
   }
 }]);

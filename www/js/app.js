@@ -53,10 +53,10 @@ angular.module('drinkalytics', ['ionic', 'drinkalytics.services', 'drinkalytics.
       }
     })
 
-    .state('tab.about', {
-      url: '/about',
+    .state('tab.stats', {
+      url: '/stats',
       views: {
-        'about-tab': {
+        'stats-tab': {
           templateUrl: 'templates/globalStats.html',
           controller: 'StatsCtrl'
         }
