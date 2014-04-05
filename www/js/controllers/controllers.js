@@ -15,8 +15,7 @@ angular.module('drinkalytics.controllers', [])
 })
 
 .controller('StatsCtrl', ['$scope', '$stateParams', 'DrinkService', function($scope, $stateParams, DrinkService) {
-  DrinkService.pull(function (data) {
+  DrinkService.get(function (data) {
     $scope.everyone = data;
-    console.log($scope.everyone);
   });
 }]);
