@@ -1,0 +1,31 @@
+<ion-view title="'Home'">
+    <ion-content has-header="true">
+
+        <label class="">Name:</label>
+        <input type="text" ng-model="drink.owner">
+
+        <label class="">Drink:</label>
+        <select ng-model="drink.type">
+            <option checked="" value="Beer">Beer</option>
+            <option checked="" value="Wine">Wine</option>
+            <option checked="" value="Shot">Shot</option>
+            <option checked="" value="Mixed Drink">Mixed Drink</option>
+            <option checked="" value="Sipping">Sipping</option>
+            <option checked="" value="Other">Other</option>
+        </select>
+
+        <label class="">Details:</label>
+        <input type="text" ng-model="drink.details" placeholder="Details (optional)">
+
+        <label class="control-label">Servings:</label>
+        <div class="button-bar">
+            <button value="1" class="button button-positive" ng-click="addDrink(1)">+1</button>
+            <button value="2" class="button button-positive" ng-click="addDrink(2)">+2</button>
+            <button value="3" class="button button-positive" ng-click="addDrink(3)">+3</button>
+            <button value="4" class="button button-positive" ng-click="addDrink(4)">+4</button>
+        </div>
+        <div ng-repeat="user in keys(users)">
+            {{user}} : {{drinkSum(user)}}
+        </div>
+    </ion-content>
+</ion-view>
